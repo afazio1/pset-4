@@ -19,7 +19,11 @@ else if (lowerBound % 2 !== 0){
   }
 }
 else {
-  console.log("\nInvalid.")
+  while (Number.isNaN(lowerBound) || Number.isNaN(upperBound)){
+    lowerBound = Number(readlineSync.question("Lower bound: "));
+    upperBound = Number(readlineSync.question("Upper bound: "));
+
+  }
 }
 sum = sum.toLocaleString("en");
 console.log("\n" + sum + ".");
