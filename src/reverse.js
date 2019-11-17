@@ -4,15 +4,21 @@ const MIN = Number.MIN_SAFE_INTEGER;
 const MAX = Number.MAX_SAFE_INTEGER;
 
 let positiveNum = Number(readlineSync.question("\nPositive integer: "));
+let reverse = "";
 let digit;
-let divisor = 10;
 
 while (positiveNum < 0 || Number.isNaN(positiveNum) || positiveNum > MAX ) {
-  positiveNum = Number(readlineSync.question("\nPositive integer: "));
-
+  positiveNum = Number(readlineSync.question("Positive integer: "));
 }
-for (i = 0, digit = 0; digit > 1; i < positiveNum; i++, divisor ** i){
-digit = positiveNum % divisor;
-console.log(digit);
 
+while (positiveNum > 0.1){
+  digit = positiveNum % 10;
+  positiveNum = Math.floor(positiveNum / 10);
+  if (positiveNum >= 1){
+    reverse = reverse + digit + ", ";
+  }
+  else {
+    reverse = reverse + digit + ".\n";
+  }
 }
+console.log("\n" + reverse);

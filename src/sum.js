@@ -24,4 +24,4 @@ else {
 }
 
 sum = sum.toLocaleString("en");
-console.log("\n" + sum + ".");
+console.log("\n" + sum + ".\n");
