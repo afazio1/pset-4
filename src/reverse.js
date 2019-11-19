@@ -7,7 +7,7 @@ let positiveNum = Number(readlineSync.question("\nPositive integer: "));
 let reverse = "";
 let digit;
 
-while (positiveNum < 0 || Number.isNaN(positiveNum) || positiveNum > MAX ) {
+while (positiveNum < 0 || Number.isNaN(positiveNum) || positiveNum > MAX || positiveNum < 1) {
   positiveNum = Number(readlineSync.question("Positive integer: "));
 }
 
