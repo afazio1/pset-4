@@ -14,7 +14,7 @@ do {
  divisor += 1;
  indent = "";
 }
-while (nonNegativeNum < MAX && nonNegativeNum > 0)
+while (nonNegativeNum < MAX && nonNegativeNum >= 0)
 
 sum = sum - nonNegativeNum;
 divisor -= 1;
