@@ -5,52 +5,31 @@ const MIN = 1;
 let height = Number(readlineSync.question("\nHeight: "));
 
 while (height > MAX || height < MIN){
-  height = Number(readlineSync.question("\nHeight: "));
+  height = Number(readlineSync.question("Height: "));
 }
 
 function createHalfPyramid (height) {
 
   for (var i = 1; i <= height; i++) {
-    var row = '';
-
+    var row = "";
+    
     for (var j = 1; j <= (height - i); j++) {
-      row += ' ';
+      row += " ";
+      if (j == (height - i)){
+        row += "#"
+      }
     }
 
     for (var k = 1; k <= i; k++) {
-      row += '#';
+      row += "#";
+      
     }
-
+    if (i == height){
+      row += "#";
+    }
     console.log(row);
   }
 }
-
-console.log(createHalfPyramid(height));
-
-
-
-
-
-
-
-/*
-while (z > 0) {
-
-let i = height - 1;
-let x = 2;
-
-while (i > 0) {
-  line = line + " ";
-  i--;
-}
-
-while (x > 0){
-  hashes = hashes + "#";
-  x--;
-  }
-
-  line = "\n" + line + hashes;
-  console.log(line + "\n");
-  z--;
-}
-*/
+console.log();
+createHalfPyramid(height);
+console.log();
