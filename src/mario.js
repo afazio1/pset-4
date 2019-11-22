@@ -12,7 +12,7 @@ function createHalfPyramid (height) {
 
   for (var i = 1; i <= height; i++) {
     var row = "";
-    
+
     for (var j = 1; j <= (height - i); j++) {
       row += " ";
       if (j == (height - i)){
@@ -22,7 +22,7 @@ function createHalfPyramid (height) {
 
     for (var k = 1; k <= i; k++) {
       row += "#";
-      
+
     }
     if (i == height){
       row += "#";
@@ -32,4 +32,3 @@ function createHalfPyramid (height) {
 }
 console.log();
 createHalfPyramid(height);
-console.log();
