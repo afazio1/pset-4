@@ -13,25 +13,26 @@ function createHalfPyramid (height) {
   for (var i = 1; i <= height; i++) {
     var row = "";
 
-    for (var j = 1; j <= (height - i); j++) {
-      row += " ";
-      if (j == (height - i)){
+    for (var j = 1; j <= (height - i + 1); j++) {
+      if (j == (height - i + 1)){
         row += "#"
       }
+      else{
+        row += " ";
+      }
     }
-//this needs work
     for (var k = 1; k <= i; k++) {
       row += "#";
-      if (k == i) {
+      if (k == i){
         row += "  #";
+        for (var z = 1; z <= k; z++){
+          row += "#";
+        }
       }
-
-    }
-    if (i == height){
-      row += "#";
     }
     console.log(row);
   }
 }
 console.log();
 createHalfPyramid(height);
+console.log();
