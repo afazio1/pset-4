@@ -1,12 +1,13 @@
 const readlineSync = require("readline-sync");
-
+const MAX = 78;
+const MIN = 1;
 const PHI = (Math.sqrt(5) + 1) / 2
 const INVERSE_PHI = (Math.sqrt(5) - 1) / 2
 
 let nth_term = 0;
 let n = Number(readlineSync.question("\nPositive integer: "));
 
-while(n < 1 || n > 78){
+while (n < MIN || n > MAX || Number.isInteger(n) == false || Number.isNaN(n) == true) {
   n = Number(readlineSync.question("Positive integer: "));
 }
 

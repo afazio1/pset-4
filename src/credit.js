@@ -9,7 +9,7 @@ let times2;
 let newStringOfNumbers = "";
 let sumOfDigitsNotMultipliedByTwo = 0;
 
-while (creditCardNumber < MIN || creditCardNumber >= MAX){
+while (creditCardNumber < MIN || creditCardNumber >= MAX || Number.isInteger(creditCardNumber) == false || Number.isNaN(creditCardNumber) == true) {
   creditCardNumber = Number(readlineSync.question("Number: "));
 }
 creditCardNumber = String(creditCardNumber);
@@ -30,7 +30,7 @@ for (let k = newStringOfNumbers.length + 1; k >= 0; k--) {
   sum = sum + digit;
 
 }
-for (let j = numberOfDigits + 1; j >= 0; j -= 2){
+for (let j = numberOfDigits + 1; j >= 0; j -= 2) {
   digit = creditCardNumber.charAt(j);
   digit = Number(digit);
   sumOfDigitsNotMultipliedByTwo = sumOfDigitsNotMultipliedByTwo + digit;
@@ -43,12 +43,12 @@ checkSum = String(checkSum);
 let valid = (checkSum.endsWith("0") == true) ? true : false;
 
 //determine which card it is
-if (valid == true){
+if (valid == true) {
 
-  if (numberOfDigits == 15 && creditCardNumber.startsWith("34") == true || creditCardNumber.startsWith("37") == true){
+  if (numberOfDigits == 15 && creditCardNumber.startsWith("34") == true || creditCardNumber.startsWith("37") == true) {
     console.log("\nAmex.\n");
   }
-  else if (numberOfDigits == 13 || numberOfDigits == 16 && creditCardNumber.startsWith("4") == true){
+  else if (numberOfDigits == 13 || numberOfDigits == 16 && creditCardNumber.startsWith("4") == true) {
     console.log("\nVisa.\n");
   }
   else {

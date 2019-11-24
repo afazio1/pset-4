@@ -2,9 +2,10 @@ const readlineSync = require("readline-sync");
 
 const MAX = 24;
 const MIN = 1;
+
 let height = Number(readlineSync.question("\nHeight: "));
 
-while (height > MAX || height < MIN){
+while (height > MAX || height < MIN || Number.isInteger(height) == false || Number.isNaN(height) == true) {
   height = Number(readlineSync.question("Height: "));
 }
 
@@ -14,18 +15,18 @@ function createHalfPyramid (height) {
     var row = "";
 
     for (var j = 1; j <= (height - i + 1); j++) {
-      if (j == (height - i + 1)){
+      if (j == (height - i + 1)) {
         row += "#"
       }
-      else{
+      else {
         row += " ";
       }
     }
     for (var k = 1; k <= i; k++) {
       row += "#";
-      if (k == i){
+      if (k == i) {
         row += "  #";
-        for (var z = 1; z <= k; z++){
+        for (var z = 1; z <= k; z++) {
           row += "#";
         }
       }
